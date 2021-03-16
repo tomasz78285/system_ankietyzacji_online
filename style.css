@@ -1,0 +1,453 @@
+/*Wszystko*/
+body
+{
+    background-color: rgb(238, 236, 229);
+    font-family: Arial;
+    font-size: 20px;
+    color: white;
+    margin: 0;
+    height: 100%;
+}
+/*
+nav
+{
+    background-color: gainsboro;
+    width: 75%;
+    display: inline-block;
+}*/
+
+ul
+{
+    list-style-type: none;
+    display: inline-block;
+}
+
+a
+{
+    text-decoration: none;
+    color: black;
+}
+
+ul a
+{
+    color: black;
+    text-decoration: none;
+    display: block;
+}
+
+ul > #menu:hover
+{
+    background-color: rgb(238, 236, 229);
+}
+
+ul > #menu > a:hover
+{
+    color: firebrick;
+}
+
+.menu
+{
+    width: 350px;
+    height: 80px;
+    text-align: center;   
+    display: inline-block;
+    font-size: 30px;
+}
+
+li
+{
+    font-size: 40px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+main
+{
+    height: 90%;
+    float: left;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+footer
+{
+    background-color: black;
+    text-align: center;
+    padding: 10px;
+    margin-top: 350px;
+}
+
+/*index.html*/
+.i1
+{
+    width: 250px;
+    height: 250px;
+    margin: auto;
+}
+
+header
+{
+  /*  background-color: red;*/
+    text-align: center;
+    font-size: 40px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    float:initial;
+    /*width: 25%;
+    height: 72px;*/
+}
+
+
+
+.a1
+{
+    color: black;
+    height: 400px;
+    width: 1000px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+}
+
+.s1
+{
+    display: inline-block;
+    float: left;
+    text-align: center;
+    height: 300px;
+    width: 300px;
+    margin-left: 30px;
+}
+
+
+.s2
+{
+    background-color: lightblue;
+    width: 1000px;
+    text-align: justify;
+    display: inline-block;
+}
+
+.i2
+{
+    float: left;
+    height:300px;
+    width: 300px
+}
+
+.i3
+{
+    width: 500px;
+    height: 450px;
+    border-style: solid;
+    float: left;
+}
+
+.listaAnkiet:hover
+{
+    background-color: rgb(117, 185, 209);
+}
+
+.col-sm-3
+{
+    display: inline-block;
+    float: left;
+    text-align: center;
+    height: 300px;
+    width: 300px;
+    margin-left: 30px;
+    margin-bottom: 100px;
+    margin-inline-end: auto;
+}
+
+.col-sm-1
+{
+    margin-top: 100px;
+    margin-left: 150px;
+    text-align: center;
+    color: black;
+}
+
+figcaption
+{
+    color: black;
+}
+
+.tytul
+{
+    text-align: center;
+    color: black;
+    margin-top: 50px;
+}
+
+#rejestracja
+{
+    margin-left: 400px;
+    text-align: center;
+}
+
+
+/*przykladowe_ankiety.html*/
+
+.rodzaj_ankiet
+{
+    text-align: center;
+    color: black;
+}
+
+.rodzaj_ankiet h1
+{
+    color: black;
+    margin-bottom: 60px;
+}
+
+.col-sm-4
+{
+    float: left;
+    margin-top: 30px;
+    margin-inline-end: auto;
+    color: black;
+}
+
+#s4
+{
+    background-color: rgb(244, 248, 248);
+    float: right;
+    width: 600px;
+    height: 800px;
+    text-align: center;
+    border-style: double;
+    border-color: darkgrey;
+    color: black;
+}
+
+#s5
+{
+    background-color: rgb(244, 248, 248);
+    width: 600px;
+    height: 800px;
+    text-align: center;
+    border-style: double;
+    border-color: darkgrey;
+}
+
+#scenter
+{
+    background-color: rgb(244, 248, 248);
+    width: 600px;
+    height: 800px;
+    text-align: center;
+    border-style: double;
+    border-color: darkgrey;
+    margin: auto;
+    margin-top: 100px;
+    color: black;
+}
+
+.pytanie
+{
+    background-color: rgb(244, 248, 248);
+    width: 600px;
+    height: auto;
+    text-align: left;
+    border-style: double;
+    border-color: darkgrey;
+    margin: auto;
+    margin-top: 100px;
+    color: black;
+}
+
+/*stworz_ankiete.html*/
+
+#s6
+{
+    float: left;
+    width: 500px;
+    height: 500px;
+    text-align: center;
+    margin-top: 100px;
+}
+
+#s7
+{
+    margin-right: 200px;
+    float: right;
+    width: 500px;
+    height: 500px;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.link1:hover
+{
+    color: rgb(37, 11, 24);
+}
+
+.podtytul
+{
+    margin-left: 200px;
+    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+/*zaloguj.html*/
+
+#s8
+{
+    background-color: whitesmoke;
+    width: 550px;
+    padding: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    text-align: left;
+    color: black;
+}
+
+#s8:input
+{
+    width: 300px;
+    background-color: darkgrey;
+    color: black;
+    font-size: 20px;
+    padding: 10px;
+    border: 2px solid #eeeeee;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+
+.zdublowane
+{
+    width: 600px;
+    background-color: black;
+}
+
+/*rejestracja.html*/
+
+.c1
+{
+    width: 10px;
+}
+
+#rej
+{
+    color:black;
+}
+
+/*profil_user.html*/
+
+.a3
+{
+    width: 1200px;
+    height: 300px;
+    background-color: orangered;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200px;
+    border-style: groove;
+}
+
+#s9
+{
+    width: 1200px;
+    height: 50px;
+    background-color: rgb(31, 29, 29);
+    text-align: justify;
+    font-size: 25px;
+    margin-top: 150px;
+}
+
+#n2
+{
+    width: 400px;
+    height: 300px;
+    background-color: rgb(214, 207, 207);
+    float: left;
+    text-align: justify;
+    border-right: groove;
+
+}
+
+.l2
+{
+    font-size: 30px;
+    color: black;
+}
+
+#s10
+{
+    background-color: rgb(148, 141, 141);
+    height: 300px;
+    text-align: justify;
+    width: 800px;
+}
+
+/*kreator.html*/
+
+.kreatorTytul
+{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: black;
+}
+
+.pytania
+{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 100%;
+    float: left;
+    color: black;
+}
+
+.wariant
+{
+    width: 500px;
+    height: 50px;
+}
+
+.pole
+{
+    background-color: whitesmoke;
+    width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200px;
+    text-align: center;
+    color: black;
+    
+}
+
+
+/*szablony.html*/
+
+#s13
+{
+    width: 1000px;
+    height: 50px;
+    background-color: rgb(31, 29, 29);
+    text-align: justify;
+    font-size: 25px;
+    color: #eeeeee;
+    margin-bottom: 350px;
+}
+
+.szablon
+{
+    background-color: blueviolet;
+
+}
+
+#statystyka
+{
+    background-color: rgb(244, 248, 248);
+    width: 600px;
+    height: 100%;
+    text-align: center;
+    border-style: double;
+    border-color: darkgrey;
+    color: black;
+}
