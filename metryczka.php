@@ -24,7 +24,7 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="style.css" type="text/css" />
         <link rel="stylesheet" href="css/fontello.css" type="text/css" />
-        <script src="js/script.js" asyns></script>
+        <script src="script.js" asyns></script>
 	
     </head>
     <body>
@@ -32,18 +32,18 @@
     <?php
         require_once('connect.php');  
           
-        if(isset($_POST['nazwa_ankiety']) &&  isset($_POST['P1']) && isset($_POST['P101'])) 
+        if(isset($_POST['nazwa_ankiety']) &&  isset($_POST['P1'])  && isset($_POST['P101'])) 
         {
           
-        $polaczenie = new mysqli($host, $db_user, $db_password, $db_name);
+            $polaczenie = new mysqli($host, $db_user, $db_password, $db_name);
 
-        $nazwa_ankiety = $_POST['nazwa_ankiety'];
-        $gr_badawcza = $_POST['grupa_badawcza'];
-        $autor = $_SESSION['user'];
+            $nazwa_ankiety = $_POST['nazwa_ankiety'];
+            $gr_badawcza = $_POST['grupa_badawcza'];
+            $autor = $_SESSION['user'];
 
-        $polaczenie->query("INSERT INTO ankiety(nazwa_ankiety, gr_badawcza, autor) VALUES ('$nazwa_ankiety','$gr_badawcza','$autor')");
-                                        
-  
+            $polaczenie->query("INSERT INTO ankiety(nazwa_ankiety, gr_badawcza, autor) VALUES ('$nazwa_ankiety','$gr_badawcza','$autor')");
+                                            
+    
                                       
 
 
@@ -53,13 +53,11 @@
             $P4 = $_POST["P4"];
 
            
-            $polaczenie->query("INSERT INTO 'pytania' (tresc_pytania, nr_pytania_w_ankiecie, rodzaj ,ankieta) VALUES 
+            $polaczenie->query("INSERT INTO pytania (tresc_pytania, nr_pytania_w_ankiecie, rodzaj ,ankieta) VALUES 
                                                                                 ('$P1','1','zamkniete','$nazwa_ankiety'),
                                                                                 ('$P2','2','zamkniete','$nazwa_ankiety'),
                                                                                 ('$P3','3','zamkniete','$nazwa_ankiety'),
                                                                                 ('$P4','4','zamkniete','$nazwa_ankiety')");
-                                        
-                                 
 
             $P101 = $_POST['P101'];
             $P102 = $_POST['P102'];
@@ -75,7 +73,7 @@
             $P401 = $_POST['P401'];
             $P402 = $_POST['P402'];
 
-             $polaczenie->query("INSERT INTO 'odpowiedzi' (tresc_odpowiedzi, pytanie) VALUES 
+             $polaczenie->query("INSERT INTO odpowiedzi (tresc_odpowiedzi, pytanie) VALUES 
                                                                                     ('$P101','$P1'),
                                                                                     ('$P102','$P1'),
                                                                                     ('$P201','$P2'),
@@ -90,8 +88,11 @@
                                                                                     ('$P401','$P4'),
                                                                                     ('$P402','$P4')");
 
+
+       
+
             if ($polaczenie -> connect_errno) {
-            echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
+                echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
             exit();
             }
         }
@@ -124,38 +125,38 @@
                     <div class="row">
                                 <div class="col-sm-1">Pytanie1<br>
                                         <input type="text" name="P1" value="Płeć"><br><br>
-                                        <input type="text" value="Mężczyzna" name="P1O1"><br>
-                                        <input type="text" value="Kobieta" name="P1O2"><br>
+                                        <input type="text" value="Mężczyzna" name="P101"><br>
+                                        <input type="text" value="Kobieta" name="P102"><br>
                                 </div>
                         </div>
 
                         <div class="row">
                             <div class="col-sm-1">Pytanie2<br>
                                 <input type="text" name="P2" value="Wiek"><br><br>
-                                <input type="text" value="Poniżej 18" name="P2O1"><br>
-                                <input type="text" value="18 - 24" name="P2O2"><br>
-                                <input type="text" value="25 - 50" name="P2O3"><br>
-                                <input type="text" value="51 - 60" name="P2O4"><br>
-                                <input type="text" value="Powyżej 60" name="P2O5"><br>
+                                <input type="text" value="Poniżej 18" name="P201"><br>
+                                <input type="text" value="18 - 24" name="P202"><br>
+                                <input type="text" value="25 - 50" name="P203"><br>
+                                <input type="text" value="51 - 60" name="P204"><br>
+                                <input type="text" value="Powyżej 60" name="P205"><br>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-sm-1">Pytanie3<br>
                                 <input type="text" name="P3" value="Wyksztalcenie"><br><br>
-                                <input type="text" value="Podstawowe" name="P3O1"><br>
-                                <input type="text" value="Gimnazjalne" name="P3O2"><br>
-                                <input type="text" value="Średnie" name="P3O3"><br>
-                                <input type="text" value="Wyższe" name="P3O3"><br>
-                                <input type="text" value="Brak" name="P3O4"><br>
+                                <input type="text" value="Podstawowe" name="P301"><br>
+                                <input type="text" value="Gimnazjalne" name="P302"><br>
+                                <input type="text" value="Średnie" name="P303"><br>
+                                <input type="text" value="Wyższe" name="P303"><br>
+                                <input type="text" value="Brak" name="P304"><br>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-sm-1">Pytanie4<br>
                                 <input type="text" name="P4" value="Zamieszkanie"><br><br>
-                                <input type="text" value="Wieś" name="P4O1"><br>
-                                <input type="text" value="Miasto" name="P4O2"><br>
+                                <input type="text" value="Wieś" name="P401"><br>
+                                <input type="text" value="Miasto" name="P402"><br>
                                         
                             </div>
                         </div>
