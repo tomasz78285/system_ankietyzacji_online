@@ -20,17 +20,25 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="style.css" type="text/css" />
         <link rel="stylesheet" href="css/fontello.css" type="text/css" />
-        <script src="js/script.js" asyns></script>
+        <script src="script.js" asyns></script>
 	
     </head>
     <body>
         <main>
         <form method="post">
             <label>Wpisz nazwe ankiety</label>
-            <input type="text" name="ankieta" />
+            <input type="text" name="ankieta" 
+            <?php
+            if(isset($_POST['ankieta'])){
+                $a = $_POST['ankieta'];
+                echo("value='$a'");
+            }
+                ?>
+            />
             <input type="submit" value="OK" />
         </form>
         <div class="pytanie">
+            <form method="post">
             <?php
                         
                         if(isset($_POST['ankieta'])){
@@ -59,13 +67,13 @@
                                     if($result2 && $result2->num_rows > 0) {
                                         if($rodzaj=='zamkniete'){
                                         while($row2 = $result2->fetch_assoc()) {
-                                            $id_odpowiedzi = $row2["id_odpowiedzi"];
-                                            echo "<input type='checkbox' name='$id_odpowiedzi'/> ".$row2["tresc_odpowiedzi"]. "<br>";   
+                                           // $id_odpowiedzi = $row2["id_odpowiedzi"];
+                                            echo "<input type='checkbox' name='zamknieta'/> ".$row2["tresc_odpowiedzi"]. "<br>";   
                                         }
                                     }
                                     if($rodzaj=='otwarte'){
-                                            echo "<input type='text' name='otwarta".$licznikOtwartych."'/>";
-                                            $licznikOtwartych++;
+                                            echo "<input type='text' name='otwarta'/>";
+                                           // $licznikOtwartych++;
                                         }
                                     }
                                 else {
@@ -79,11 +87,12 @@
                     ?>
                     <br><br>
                     <input type="submit" value="Przeslij ankietę" />
+                    </form>
                     <?php
                         if(isset($_POST['id_odpowiedzi'])){
-                            $id = $_POST['id_odpowiedzi'];
+                            $id = $_POST['zamknieta'];
                             $tresc = $_POST['otwarta'];
-                            $polaczenie -> query("UPDATE odpowiedzi SET ilosc += 1 WHERE id_odpowiedzi='$id'");
+                            $polaczenie -> query("UPDATE odpowiedzi SET ilosc = ilosc + 1 WHERE id_odpowiedzi='$id'");
                             $polaczenie->close();
                             $polaczenie->query("INSERT INTO odpowiedzi VALUES (NULL,'$tresc','','$odp')");
                             $polaczenie->close();
