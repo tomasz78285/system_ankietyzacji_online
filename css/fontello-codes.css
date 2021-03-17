@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+ 
+.icon-plus-circle:before { content: '\2795'; } /* '➕' */
+.icon-basket:before { content: '\e0d2'; } /* '' */
+.icon-user-outline:before { content: '\e112'; } /* '' */
+.icon-user:before { content: '\e113'; } /* '' */
+.icon-doc-text:before { content: '\f0f6'; } /* '' */
+.icon-laptop-1:before { content: '\f109'; } /* '' */
+.icon-book:before { content: '📕'; } /* '\1f4d5' */
+.icon-search:before { content: '🔍'; } /* '\1f50d' */
+.icon-wrench:before { content: '🔧'; } /* '\1f527' */
