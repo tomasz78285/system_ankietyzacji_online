@@ -21,15 +21,10 @@ function dodajZamkniete2()
 
 function dodajOdpowiedzJedno()
 {
-    document.getElementById("zamknieta1"+i+"").innerHTML = document.getElementById("zamknieta1"+i+"").innerHTML + '<br><form method="post"><input type="text" name="odp_zamkniete"><input type=button value="-" onclick="usunOdpowiedzJedno()"></form>'
+    document.getElementById("zamknieta1"+i+"").innerHTML = document.getElementById("zamknieta1"+i+"").innerHTML + '<br><form method="post"><input type="text" name="odp_zamkniete"></form>'
 }
 
 function dodajOdpowiedzWielo()
 {
-    document.getElementById("zamknieta2"+i+"").innerHTML = document.getElementById("zamknieta2"+i+"").innerHTML + '<br><form method="post"><input type="text name="odp_multi""><input type=button value="-" onclick="usunOdpowiedzWielo()"></form>'
-}
-
-function usunOdpowiedzJedno()
-{
-
+    document.getElementById("zamknieta2"+i+"").innerHTML = document.getElementById("zamknieta2"+i+"").innerHTML + '<br><form method="post"><input type="text name="odp_multi""></form>'
 }
