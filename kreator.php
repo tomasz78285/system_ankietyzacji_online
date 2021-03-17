@@ -25,7 +25,7 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="style.css" type="text/css" />
         <link rel="stylesheet" href="css/fontello.css" type="text/css" />
-        <script src="js/script.js" asyns></script>
+        <script src="script.js" asyns></script>
 	
     </head>
     <body>
@@ -76,6 +76,23 @@
 
                                 $polaczenie->query("INSERT INTO ankiety(nazwa_ankiety, grupa_badawcza, autor) VALUES ('$nazwa_ankiety','$gr_badawcza','$autor')");
                                 header('Location: udostepnianie.php');
+
+                                $pytanieOtawrte = $_POST['pytanie_otwarte'];
+                                $pytanieZamkniete = $_POST['pytanie_zamkniete'];
+                                $pytanieMulti = $_POST['multichoice'];
+                                $polaczenie->query("INSERT INTO pytania (tresc_pytania, ankieta) VALUES 
+                                                                                                ('$pytanieOtawrte','$nazwa_ankiety'),
+                                                                                                ('$pytanieZamkniete','$nazwa_ankiety'),
+                                                                                                ('$pytanieMulti','$nazwa_ankiety')");
+
+                                $odpOtwarta = $_POST['odp_otwarta'];
+                                $odpZamknieta = $_POST['odp_zamkniete'];
+                                $odpMulti = $_POST['odp_multi'];
+                                
+                                $polaczenie->query("INSERT INTO odpowiedzi (tresc_odpowiedzi, pytanie) VALUES 
+                                                                                                ('$odpOtwarta','$pytanieOtawrte'),
+                                                                                                ('$odpZamknieta','$pytanieZamkniete'),
+                                                                                                ('$odpMulti','$pytanieMulti')");
 
                                 if ($polaczenie -> connect_errno) {
                                     echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
