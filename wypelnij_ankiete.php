@@ -25,6 +25,7 @@
     </head>
     <body>
         <main>
+        <div class="pytanie">
         <form method="post">
             <label>Wpisz nazwe ankiety</label>
             <input type="text" name="ankieta" 
@@ -37,7 +38,7 @@
             />
             <input type="submit" value="OK" />
         </form>
-        <div class="pytanie">
+        
             <form method="post">
             <?php
                         
@@ -67,13 +68,14 @@
                                     if($result2 && $result2->num_rows > 0) {
                                         if($rodzaj=='zamkniete'){
                                         while($row2 = $result2->fetch_assoc()) {
-                                           // $id_odpowiedzi = $row2["id_odpowiedzi"];
-                                            echo "<input type='checkbox' name='zamknieta'/> ".$row2["tresc_odpowiedzi"]. "<br>";   
+                                            $id_odpowiedzi = $row2["id_odpowiedzi"];
+                                            echo "<input type='checkbox' name='odp_$id_odpowiedzi'/> ".$row2["tresc_odpowiedzi"]. "<br>";   
                                         }
                                     }
+         
                                     if($rodzaj=='otwarte'){
-                                            echo "<input type='text' name='otwarta'/>";
-                                           // $licznikOtwartych++;
+                                            echo "<input type='text' name='otwarta".$licznikOtwartych."'/>";
+                                            $licznikOtwartych++;
                                         }
                                     }
                                 else {
@@ -89,19 +91,26 @@
                     <input type="submit" value="Przeslij ankietę" />
                     </form>
                     <?php
-                        if(isset($_POST['id_odpowiedzi'])){
-                            $id = $_POST['zamknieta'];
-                            $tresc = $_POST['otwarta'];
-                            $polaczenie -> query("UPDATE odpowiedzi SET ilosc = ilosc + 1 WHERE id_odpowiedzi='$id'");
-                            $polaczenie->close();
-                            $polaczenie->query("INSERT INTO odpowiedzi VALUES (NULL,'$tresc','','$odp')");
-                            $polaczenie->close();
-                        if ($polaczenie -> connect_errno) {
-                            echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
-                            exit();
+                        $polaczenie = new mysqli($host, $db_user, $db_password, $db_name);
+                        for($x=0;$x<20;$x++)
+                        {
+                            //sprawdzamy pola odp_X
+                            //echo("sprawdzam odp_$x <br>");
+                            if(isset($_POST["odp_$x"])){
+                               
+                                $polaczenie -> query("UPDATE odpowiedzi SET ilosc = ilosc + 1 WHERE id_odpowiedzi=$x");
+                               
+                             }
+                             
+                             //sprawdzamy pola otwartaX
+                             //echo("sprawdzam otwarta$x <br>");
+                             if(isset($_POST["otwarta$x"])){
+                                 $tresc = $_POST["otwarta$x"];
+                                 if($tresc!="")
+                                     $polaczenie->query("INSERT INTO odpowiedzi(tresc_odpowiedzi,ilosc,pytanie) VALUES ('$tresc',1,'Co powiesz?')");
+                              }
                         }
-                      
-                    }
+                        $polaczenie->close();
                     ?>
                 </div>
 <?php 
